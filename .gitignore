@@ -1,0 +1,49 @@
+# Fichiers/dossiers générés par Visual Studio
+.vs/
+.vscode/
+.idea/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Dossiers de build
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]evelopment/
+[Dd]ist/
+[Dd]ebugFinal/
+[Dd]istFinal/
+Release/
+ReleaseFinal/
+x64/
+x86/
+
+# Dossiers binaires et compilés
+bin/
+obj/
+
+# Fichiers de configuration utilisateur
+*.config
+
+# Fichiers de cache ASP.NET (si utilisé)
+# See https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
+# https://learn.microsoft.com/en-us/visualstudio/get-started/gitignore-files#aspnet-files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Fichiers générés par le système d'exploitation
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Fichiers de logs
+*.log
+
+# Fichiers de compilation d'archive
+*.tar
+*.gz
+*.zip
+*.rar
