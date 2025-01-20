@@ -29,39 +29,34 @@
         private void InitializeComponent()
         {
             listBox1 = new ListBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtUtil = new TextBox();
             lblAdressP = new Label();
             lblAdressD = new Label();
+            txtDispo = new TextBox();
             SuspendLayout();
             // 
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 25;
-            listBox1.Location = new Point(12, 184);
+            listBox1.Location = new Point(12, 34);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(388, 254);
+            listBox1.Size = new Size(388, 404);
             listBox1.TabIndex = 1;
             // 
-            // textBox1
+            // txtUtil
             // 
-            textBox1.Location = new Point(12, 129);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(150, 31);
-            textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(12, 46);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(150, 31);
-            textBox2.TabIndex = 3;
+            txtUtil.BackColor = SystemColors.ScrollBar;
+            txtUtil.Enabled = false;
+            txtUtil.Location = new Point(454, 139);
+            txtUtil.Name = "txtUtil";
+            txtUtil.Size = new Size(150, 31);
+            txtUtil.TabIndex = 3;
             // 
             // lblAdressP
             // 
             lblAdressP.AutoSize = true;
-            lblAdressP.Location = new Point(12, 9);
+            lblAdressP.Location = new Point(454, 91);
             lblAdressP.Name = "lblAdressP";
             lblAdressP.Size = new Size(302, 25);
             lblAdressP.TabIndex = 4;
@@ -70,21 +65,30 @@
             // lblAdressD
             // 
             lblAdressD.AutoSize = true;
-            lblAdressD.Location = new Point(12, 90);
+            lblAdressD.Location = new Point(454, 250);
             lblAdressD.Name = "lblAdressD";
             lblAdressD.Size = new Size(317, 25);
             lblAdressD.TabIndex = 5;
             lblAdressD.Text = "N° d'adresse utilisable sur votre réseau";
+            // 
+            // txtDispo
+            // 
+            txtDispo.BackColor = SystemColors.ScrollBar;
+            txtDispo.Enabled = false;
+            txtDispo.Location = new Point(454, 303);
+            txtDispo.Name = "txtDispo";
+            txtDispo.Size = new Size(150, 31);
+            txtDispo.TabIndex = 6;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtDispo);
             Controls.Add(lblAdressD);
             Controls.Add(lblAdressP);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtUtil);
             Controls.Add(listBox1);
             Name = "Form1";
             Text = "Form1";
@@ -95,9 +99,9 @@
 
         #endregion
         private ListBox listBox1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtUtil;
         private Label lblAdressP;
         private Label lblAdressD;
+        private TextBox txtDispo;
     }
 }
