@@ -15,7 +15,7 @@ namespace IpScannerApp
 {
     public partial class Menu : Form
     {
-        Form1 f = new Form1();  // Créer une nouvelle instance de Form2
+        FormPrincipal f = new FormPrincipal();  // Créer une nouvelle instance du formPrincipal
 
         public Menu()
         {
@@ -50,7 +50,11 @@ namespace IpScannerApp
                         MessageBox.Show("Veuillez écrire votre adresse IP", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-            
+                // Redemander à l'utilisateur d'entrer une adresse IP valide
+                adresseIp = txtIp.Text; // On met à jour 'adresseIp' avec le texte saisi dans la TextBox
+                condition = !string.IsNullOrEmpty(adresseIp) && IPAddress.TryParse(adresseIp, out ip); // Re-vérifie la condition
+
+
             }
             // Continue tant que la condition n'est pas vraie (c'est-à-dire tant que l'adresse IP n'est pas valide)
             while (condition != true);

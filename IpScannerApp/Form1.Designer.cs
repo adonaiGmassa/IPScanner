@@ -1,6 +1,6 @@
 ﻿namespace IpScannerApp
 {
-    partial class Form1
+    partial class FormPrincipal
     {
         /// <summary>
         ///  Required designer variable.
@@ -80,7 +80,7 @@
             txtDispo.Size = new Size(150, 31);
             txtDispo.TabIndex = 6;
             // 
-            // Form1
+            // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -90,9 +90,8 @@
             Controls.Add(lblAdressP);
             Controls.Add(txtUtil);
             Controls.Add(listBox1);
-            Name = "Form1";
-            Text = "Form1";
-            Load += Form1_Load;
+            Name = "FormPrincipal";
+            Text = "IPScanner";
             ResumeLayout(false);
             PerformLayout();
         }
