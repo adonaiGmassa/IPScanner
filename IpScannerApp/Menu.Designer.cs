@@ -28,55 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
-            label2 = new Label();
+            lblTitreM = new Label();
+            txtIp = new TextBox();
+            btnValiderM = new Button();
+            lblD = new Label();
             SuspendLayout();
             // 
-            // label1
+            // lblTitreM
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(361, 23);
-            label1.Name = "label1";
-            label1.Size = new Size(59, 25);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            lblTitreM.AutoSize = true;
+            lblTitreM.Font = new Font("Arial", 18F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            lblTitreM.Location = new Point(309, 19);
+            lblTitreM.Name = "lblTitreM";
+            lblTitreM.Size = new Size(191, 43);
+            lblTitreM.TabIndex = 0;
+            lblTitreM.Text = "IpScanner";
             // 
-            // textBox1
+            // txtIp
             // 
-            textBox1.Location = new Point(208, 200);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(385, 31);
-            textBox1.TabIndex = 1;
+            txtIp.Location = new Point(210, 200);
+            txtIp.Multiline = true;
+            txtIp.Name = "txtIp";
+            txtIp.Size = new Size(385, 30);
+            txtIp.TabIndex = 1;
             // 
-            // button1
+            // btnValiderM
             // 
-            button1.Location = new Point(335, 312);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 2;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnValiderM.Location = new Point(339, 305);
+            btnValiderM.Name = "btnValiderM";
+            btnValiderM.Size = new Size(112, 34);
+            btnValiderM.TabIndex = 2;
+            btnValiderM.Text = "Valider";
+            btnValiderM.UseVisualStyleBackColor = true;
+            btnValiderM.Click += btnValiderM_Click;
             // 
-            // label2
+            // lblD
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(361, 161);
-            label2.Name = "label2";
-            label2.Size = new Size(59, 25);
-            label2.TabIndex = 3;
-            label2.Text = "label2";
+            lblD.AutoSize = true;
+            lblD.Font = new Font("Liberation Mono", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblD.Location = new Point(242, 170);
+            lblD.Name = "lblD";
+            lblD.Size = new Size(320, 27);
+            lblD.TabIndex = 3;
+            lblD.Text = "Entre votre adresse ip";
             // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label2);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
+            Controls.Add(lblD);
+            Controls.Add(btnValiderM);
+            Controls.Add(txtIp);
+            Controls.Add(lblTitreM);
             Name = "Menu";
             Text = "Menu";
             ResumeLayout(false);
@@ -85,9 +89,9 @@
 
         #endregion
 
-        private Label label1;
-        private TextBox textBox1;
-        private Button button1;
-        private Label label2;
+        private Label lblTitreM;
+        private TextBox txtIp;
+        private Button btnValiderM;
+        private Label lblD;
     }
 }
