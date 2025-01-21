@@ -8,12 +8,15 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace IpScannerApp
 {
     public partial class Menu : Form
     {
+        Form1 f = new Form1();  // Créer une nouvelle instance de Form2
+
         public Menu()
         {
             InitializeComponent();
@@ -21,27 +24,41 @@ namespace IpScannerApp
 
         private void btnValiderM_Click(object sender, EventArgs e)
         {
+            // Récupère le texte saisi dans la TextBox 'txtIp'
             string adresseIp = txtIp.Text;
+
+            // Vérifie si l'adresse IP est non vide et si elle est au bon format (IPv4 ou IPv6)
             bool condition = !string.IsNullOrEmpty(adresseIp) && IPAddress.TryParse(adresseIp, out IPAddress ip);
 
+            // Débute une boucle 'do while' qui continue tant que l'adresse IP n'est pas valide
             do
             {
-                if (condition == false) 
+
+                if (condition == false)
                 {
-                    if (!IPAddress.TryParse(adresseIp,out ip)) 
+                    // Si l'adresse IP n'est pas valide au format IPv4 ou IPv6
+                    if (!IPAddress.TryParse(adresseIp, out ip))
                     {
-                        MessageBox.Show("Veuillez ecrire dans le format ipv4", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        // Affiche un message d'erreur 
+                        MessageBox.Show("Veuillez écrire dans le format IPv4 ou IPv6", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
+                    // Si l'adresse IP est vide
                     if (string.IsNullOrEmpty(adresseIp))
                     {
+                        // Affiche un message d'erreur 
                         MessageBox.Show("Veuillez écrire votre adresse IP", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
                 }
-
+            
             }
-            while (condition!=true);
+            // Continue tant que la condition n'est pas vraie (c'est-à-dire tant que l'adresse IP n'est pas valide)
+            while (condition != true);
 
+            this.Hide(); // Masque le formulaire actuel
+            f.Show();  // Affiche Form1 à l'écran
         }
+
     }
+
 }
