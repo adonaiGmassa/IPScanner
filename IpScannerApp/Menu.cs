@@ -30,37 +30,33 @@ namespace IpScannerApp
             // Vérifie si l'adresse IP est non vide et si elle est au bon format (IPv4 ou IPv6)
             bool condition = !string.IsNullOrEmpty(adresseIp) && IPAddress.TryParse(adresseIp, out IPAddress ip);
 
-            // Débute une boucle 'do while' qui continue tant que l'adresse IP n'est pas valide
-            do
+            if (!condition)
             {
-
-                if (condition == false)
+                // Si l'adresse IP n'est pas valide au format IPv4 ou IPv6
+                if (!IPAddress.TryParse(adresseIp, out ip))
                 {
-                    // Si l'adresse IP n'est pas valide au format IPv4 ou IPv6
-                    if (!IPAddress.TryParse(adresseIp, out ip))
-                    {
-                        // Affiche un message d'erreur 
-                        MessageBox.Show("Veuillez écrire dans le format IPv4 ou IPv6", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    // Affiche un message d'erreur 
+                    MessageBox.Show("Veuillez écrire dans le format IPv4 ou IPv6", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Redemander à l'utilisateur d'entrer une adresse IP valide
+                    adresseIp = txtIp.Text; // On met à jour 'adresseIp' avec le texte saisi dans la TextBox
 
-                    // Si l'adresse IP est vide
-                    if (string.IsNullOrEmpty(adresseIp))
-                    {
-                        // Affiche un message d'erreur 
-                        MessageBox.Show("Veuillez écrire votre adresse IP", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                 }
-                // Redemander à l'utilisateur d'entrer une adresse IP valide
-                adresseIp = txtIp.Text; // On met à jour 'adresseIp' avec le texte saisi dans la TextBox
-                condition = !string.IsNullOrEmpty(adresseIp) && IPAddress.TryParse(adresseIp, out ip); // Re-vérifie la condition
+                // Si l'adresse IP est vide
+                if (string.IsNullOrEmpty(adresseIp))
+                {
+                    // Affiche un message d'erreur 
+                    MessageBox.Show("Veuillez écrire votre adresse IP", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Redemander à l'utilisateur d'entrer une adresse IP valide
+                    adresseIp = txtIp.Text; // On met à jour 'adresseIp' avec le texte saisi dans la TextBox
 
+                }
 
             }
-            // Continue tant que la condition n'est pas vraie (c'est-à-dire tant que l'adresse IP n'est pas valide)
-            while (condition != true);
-
-            this.Hide(); // Masque le formulaire actuel
-            f.Show();  // Affiche Form1 à l'écran
+            else
+            {
+                this.Hide(); // Masque le formulaire actuel
+                f.Show();  // Affiche Form1 à l'écran
+            }
         }
 
     }
