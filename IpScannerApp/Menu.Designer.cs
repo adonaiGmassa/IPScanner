@@ -90,8 +90,8 @@
         #endregion
 
         private Label lblTitreM;
-        private TextBox txtIp;
         private Button btnValiderM;
         private Label lblD;
+        public TextBox txtIp;
     }
 }
